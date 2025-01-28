@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { PlaylistResponse } from '../models/PlayListResponse';
-import { MappedTrack } from '../models/MappedTrack';
 import { ExtraTracksResponse } from '../models/ExtraTracksResponse';
 import { Playlist } from '../models/Playlist';
 

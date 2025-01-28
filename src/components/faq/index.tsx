@@ -1,4 +1,4 @@
-import SectionTitle from "../Common/SectionTitle";
+import SectionTitle from "../common/SectionTitle";
 import SingleFaq from "./SingleFaq";
 
 const Faq = () => {

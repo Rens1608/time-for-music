@@ -1,5 +1,5 @@
 "use client";
-import SectionTitle from "../Common/SectionTitle";
+import SectionTitle from "../common/SectionTitle";
 import PricingBox from "./PricingBox";
 import { pricingData } from "@/stripe/pricingData";
 
