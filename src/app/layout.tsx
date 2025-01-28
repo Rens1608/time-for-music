@@ -1,15 +1,15 @@
 "use client";
 
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
-import ScrollToTop from "@/components/ScrollToTop";
 import { ThemeProvider } from "next-themes";
 import "../styles/index.css";
 import "../styles/prism-vsc-dark-plus.css";
 import ToasterContext from "./api/contex/ToasetContex";
 import { useEffect, useState } from "react";
-import PreLoader from "@/components/Common/PreLoader";
 import localFont from 'next/font/local'
+import PreLoader from "@/components/common/PreLoader";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
+import ScrollToTop from "@/components/scrollToTop";
 
 const myFont = localFont({
   src: '../fonts/GeckoLunch.ttf',
