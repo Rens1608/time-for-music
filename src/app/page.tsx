@@ -1,9 +1,5 @@
 "use client";
 
-import { useState } from "react";
-import { useSpotifyPlaylist } from './hooks/useSpotifyPlaylists';
-import { MappedTrack } from "./models/MappedTrack";
-import CardList from "@/components/cards/cardList";
 import CallToAction from "@/components/callToAction";
 import ScrollUp from "@/components/common/ScrollUp";
 import Hero from "@/components/hero";

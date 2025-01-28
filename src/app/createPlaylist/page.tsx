@@ -19,7 +19,7 @@ export default function CreatePlayListPage() {
     const [isValidSpotifyUrl, setIsValidSpotifyUrl] = useState(true)
     const [playlistName, setPlaylistName] = useState("")
     const [areCardsCreated, setAreCardsCreated] = useState(false)
-    const [currentStep, setCurrentStep] = useState(0)
+    const [currentStep] = useState(0)
     const [isDoubleSided, setIsDoublesided] = useState(false)
 
     const getPlayListById = () => {
@@ -32,6 +32,7 @@ export default function CreatePlayListPage() {
         }
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const handleSubscription = async (e: any) => {
         e.preventDefault();
         const { data } = await axios.post(
