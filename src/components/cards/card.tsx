@@ -15,7 +15,7 @@ type CardDataBack = {
 
 const Card: React.FC<MappedTrack> = ({ title, artist, year, url, isFront }) => {
     return (
-        <div className="w-64 h-64 relative m-1">
+        <div className="w-full h-full max-w-64 max-h-64 relative">
             {
                 isFront ? <CardFront url={url} />
                     : <CardBack title={title} artist={artist} year={year} />
@@ -34,9 +34,9 @@ const CardFront: React.FC<CardDataFront> = ({ url }) => {
                 style={{ objectFit: "cover" }}
                 className="absolute inset-0 z-0"
             />
-
+            <div className="w-64 h-64" />
             {/* QR code centered in the square */}
-            <div className="flex items-center justify-center h-full w-full z-10 relative">
+            <div className="flex items-center justify-center h-full w-full z-10 absolute">
                 <QRCode size={150} value={url} fgColor="#FFFFFF" bgColor="transparent" />
             </div>
         </div>

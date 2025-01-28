@@ -2,6 +2,8 @@ import { useState } from 'react';
 import axios from 'axios';
 import { PlaylistResponse } from '../models/PlayListResponse';
 import { MappedTrack } from '../models/MappedTrack';
+import { ExtraTracksResponse } from '../models/ExtraTracksResponse';
+import { Playlist } from '../models/Playlist';
 
 const SPOTIFY_API_BASE_URL = 'https://api.spotify.com/v1';
 const CLIENT_ID = '13dc194028b64a3b80a84a4e3f3d562e';
@@ -37,7 +39,7 @@ export function useSpotifyPlaylist() {
         }
     };
 
-    const getPlaylist = async (playlistId: string): Promise<MappedTrack[]> => {
+    const getPlaylist = async (playlistId: string): Promise<Playlist> => {
         setLoading(true);
         setError(null);
         try {
@@ -48,14 +50,31 @@ export function useSpotifyPlaylist() {
                     Authorization: `Bearer ${accessToken}`,
                 },
             });
+            let tracks = response.data.tracks.items;
+            let moreTracks = tracks.length == 100
+            while (moreTracks) {
+                console.log(tracks.length);
 
-            return response.data.tracks.items.map((item) => ({
-                title: item.track.name,
-                artist: item.track.artists[0]?.name || 'Unknown Artist',
-                year: item.track.album.release_date.split('-')[0],
-                url: item.track.href,
-                isFront: true,
-            }));
+                const nextResponse = await axios.get<ExtraTracksResponse>(response.data.tracks.next, {
+                    headers: {
+                        Authorization: `Bearer ${accessToken}`,
+                    },
+                });
+                console.log(nextResponse);
+                tracks = tracks.concat(nextResponse.data.items)
+                moreTracks = nextResponse.data.items.length == 100
+            }
+
+            return {
+                name: response.data.name,
+                tracks: tracks.map((item) => ({
+                    title: item.track.name,
+                    artist: item.track.artists[0]?.name || 'Unknown Artist',
+                    year: item.track.album.release_date.split('-')[0],
+                    url: item.track.href,
+                    isFront: true,
+                }))
+            }
         } catch (err) {
             console.error('Error fetching playlist:', err);
             setError('Failed to fetch playlist');

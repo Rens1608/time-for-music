@@ -8,6 +8,14 @@ type CardListProps = {
     cards: MappedTrack[];
 };
 
+const transformList = (list: MappedTrack[]): MappedTrack[] => {
+    const transformedList = [...list];
+    for (let i = 0; i < list.length; i += 2) {
+        [transformedList[i], transformedList[i + 1]] = [transformedList[i + 1], transformedList[i]];
+    }
+    return transformedList.filter((item) => item !== undefined);
+};
+
 const CardList: React.FC<CardListProps> = ({ cards }) => {
     const cardChunks = chunkArray(cards, 8);
 
@@ -33,7 +41,7 @@ const CardList: React.FC<CardListProps> = ({ cards }) => {
 
                     {/* Backs section */}
                     <div className="grid grid-cols-2 justify-items-center page-break always h-screen">
-                        {chunk.map((card, index) => (
+                        {transformList(chunk).map((card, index) => (
                             <Card key={`back-${index}`} url={card.url} title={card.title} artist={card.artist} year={card.year} isFront={false} />
                         ))}
                     </div>
