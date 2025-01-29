@@ -9,7 +9,6 @@ import { Playlist } from "../models/Playlist";
 import SelectableContainer from "@/components/selectableContainer";
 import ProductPage from "@/components/product";
 import { loadStripe } from "@stripe/stripe-js";
-import axios from "axios";
 import { Input } from "@/components/common/Input";
 
 export default function CreatePlayListPage() {
@@ -21,6 +20,7 @@ export default function CreatePlayListPage() {
     const [areCardsCreated, setAreCardsCreated] = useState(false)
     const [currentStep] = useState(0)
     const [isDoubleSided, setIsDoublesided] = useState(false)
+    const stripePromise = loadStripe(process.env.NEXT_PUBLIC_DEV_STRIPE_PUBLISHABLE_KEY!);
 
     const getPlayListById = () => {
         const id = getSpotifyId(spotifyUrl)
@@ -33,20 +33,13 @@ export default function CreatePlayListPage() {
     }
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const handleSubscription = async (e: any) => {
-        e.preventDefault();
-        const { data } = await axios.post(
-            "/api/payment",
-            {
-                priceId: "prod_RfED2OSaIzW6FK",
-            },
-            {
-                headers: {
-                    "Content-Type": "application/json",
-                },
-            },
-        );
-        window.location.assign(data);
+    const handleSubscription = async () => {
+        const stripe = await stripePromise;
+        const response = await fetch('/api/checkout-sessions/create', {
+            method: 'POST',
+        });
+        const session = await response.json();
+        await stripe!.redirectToCheckout({ sessionId: session.id });
     };
 
     const playlistStep = () => {
@@ -61,12 +54,8 @@ export default function CreatePlayListPage() {
                             <SelectableContainer title="Double sided" description="We recommend to only choose this option when you have a duplex printer, due to card alignment isues." imageSrc="double_sided.svg" onClick={() => setIsDoublesided(true)} isSelected={isDoubleSided} />
                         </div>
                         <button
-                            onClick={(e) => {
-                                console.log(process.env.NEXT_PUBLIC_DEV_STRIPE_PUBLISHABLE_KEY!);
-                                console.log(process.env.NEXT_PUBLIC_DEV_STRIPE_CHECKOUT_KEY!);
-
-                                loadStripe(process.env.NEXT_PUBLIC_DEV_STRIPE_PUBLISHABLE_KEY!);
-                                handleSubscription(e)
+                            onClick={() => {
+                                handleSubscription()
                             }}
                             className="disabled:opacity-50 h-11 w-max inline-flex font-bold items-center justify-center rounded-md bg-primary px-7 text-center text-base text-white shadow-1 transition duration-300 ease-in-out hover:bg-[#3758f9e6]"
                         >
