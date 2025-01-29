@@ -8,8 +8,11 @@ import { useSpotifyPlaylist } from "../hooks/useSpotifyPlaylists";
 import { Playlist } from "../models/Playlist";
 import SelectableContainer from "@/components/selectableContainer";
 import ProductPage from "@/components/product";
-import { loadStripe } from "@stripe/stripe-js";
 import { Input } from "@/components/common/Input";
+import { fetchPostJSON } from "@/utils/api-helpers";
+import getStripe from "@/utils/get-stripejs";
+
+getStripe()
 
 export default function CreatePlayListPage() {
     const { getPlaylist } = useSpotifyPlaylist()
@@ -20,7 +23,6 @@ export default function CreatePlayListPage() {
     const [areCardsCreated, setAreCardsCreated] = useState(false)
     const [currentStep] = useState(0)
     const [isDoubleSided, setIsDoublesided] = useState(false)
-    const stripePromise = loadStripe(process.env.NEXT_PUBLIC_DEV_STRIPE_PUBLISHABLE_KEY!);
 
     const getPlayListById = () => {
         const id = getSpotifyId(spotifyUrl)
@@ -34,12 +36,25 @@ export default function CreatePlayListPage() {
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const handleSubscription = async () => {
-        const stripe = await stripePromise;
-        const response = await fetch('/api/checkout-sessions/create', {
-            method: 'POST',
+        const response = await fetchPostJSON('/api/checkout_sessions');
+
+        if (response.statusCode === 500) {
+            console.error(response.message);
+            return;
+        }
+
+        // Redirect to Checkout.
+        const stripe = await getStripe();
+        const { error } = await stripe!.redirectToCheckout({
+            // Make the id field from the Checkout Session creation API response
+            // available to this file, so you can provide it as parameter here
+            // instead of the {{CHECKOUT_SESSION_ID}} placeholder.
+            sessionId: response.id,
         });
-        const session = await response.json();
-        await stripe!.redirectToCheckout({ sessionId: session.id });
+        // If `redirectToCheckout` fails due to a browser or network
+        // error, display the localized error message to your customer
+        // using `error.message`.
+        console.warn(error.message);
     };
 
     const playlistStep = () => {
