@@ -52,14 +52,11 @@ export function useSpotifyPlaylist() {
             let tracks = response.data.tracks.items;
             let moreTracks = tracks.length == 100
             while (moreTracks) {
-                console.log(tracks.length);
-
                 const nextResponse = await axios.get<ExtraTracksResponse>(response.data.tracks.next, {
                     headers: {
                         Authorization: `Bearer ${accessToken}`,
                     },
                 });
-                console.log(nextResponse);
                 tracks = tracks.concat(nextResponse.data.items)
                 moreTracks = nextResponse.data.items.length == 100
             }

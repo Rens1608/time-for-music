@@ -7,9 +7,7 @@ import { useEffect, useState } from "react";
 import { useSpotifyPlaylist } from "../hooks/useSpotifyPlaylists";
 import { Playlist } from "../models/Playlist";
 import SelectableContainer from "@/components/selectableContainer";
-import ProductPage from "@/components/product";
 import { Input } from "@/components/common/Input";
-import { fetchPostJSON } from "@/utils/api-helpers";
 import getStripe from "@/utils/get-stripejs";
 
 getStripe()
@@ -36,25 +34,14 @@ export default function CreatePlayListPage() {
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const handleSubscription = async () => {
-        const response = await fetchPostJSON('/api/checkout_sessions');
-
-        if (response.statusCode === 500) {
-            console.error(response.message);
-            return;
-        }
-
-        // Redirect to Checkout.
-        const stripe = await getStripe();
-        const { error } = await stripe!.redirectToCheckout({
-            // Make the id field from the Checkout Session creation API response
-            // available to this file, so you can provide it as parameter here
-            // instead of the {{CHECKOUT_SESSION_ID}} placeholder.
-            sessionId: response.id,
-        });
-        // If `redirectToCheckout` fails due to a browser or network
-        // error, display the localized error message to your customer
-        // using `error.message`.
-        console.warn(error.message);
+        fetch('/api/checkout', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({}),
+        }).then((res) => console.log(res)
+        );
     };
 
     const playlistStep = () => {
@@ -100,26 +87,9 @@ export default function CreatePlayListPage() {
         );
     }
 
-    const paymentStep = () => {
-        return (
-            <ProductPage priceId="prod_Rf8ze1Kil41yaF" />
-        )
-    }
-
     const getSpotifyId = (url: string): string | null => {
         const match = url.match(/(?:playlist|track|album|artist|show|episode)\/([a-zA-Z0-9]+)(?:\?|$)/);
         return match ? match[1] : null;
-    }
-
-    const getStepContent = () => {
-        switch (currentStep) {
-            case 0:
-                return playlistStep()
-            case 1:
-                return paymentStep()
-            default:
-                return playlistStep()
-        }
     }
 
     useEffect(() => {
@@ -133,7 +103,7 @@ export default function CreatePlayListPage() {
                 steps={['Playlist', 'Payment', 'Done!']}
                 currentStep={currentStep}
             />
-            {getStepContent()}
+            {playlistStep()}
             <Grid cards={cards} />
         </main>
     )
