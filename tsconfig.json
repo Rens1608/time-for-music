@@ -34,8 +34,10 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/app/api/checkout/route.js",
-    "src/app/api/order-details/route.js"
-  ],
+    "src/app/api/order-details/[session_id]/route.js",
+    "src/lib/generatePdf.js",
+    "src/lib/mailer.js"
+, "src/app/api/contact/route.js"  ],
   "exclude": [
     "node_modules"
   ]

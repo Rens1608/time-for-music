@@ -28,7 +28,7 @@ const Hero = () => {
                 <ul className="mb-10">
                   <li>
                     <Link
-                      href="/createPlaylist"
+                      href="/create-playlist"
                       className="inline-flex font-bold items-center justify-center rounded-md bg-secondary px-7 py-[12px] text-center text-base text-white shadow-1 transition duration-300 ease-in-out hover:bg-[#0BB489]"
                     >
                       <h2>Start now !</h2>

@@ -2,13 +2,14 @@
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import menuData from "./menuData";
 import { Menu } from "@/types/menu";
 
 const Header = () => {
   const pathUrl = usePathname();
+  const router = useRouter()
   // Navbar toggle
   const [navbarOpen, setNavbarOpen] = useState(false);
   const navbarToggleHandler = () => {
@@ -47,6 +48,10 @@ const Header = () => {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  const delay = (time: number) => {
+    return new Promise(resolve => setTimeout(resolve, time));
+  }
 
   return (
     <>
@@ -147,7 +152,7 @@ const Header = () => {
                         <li key={index} className="group relative">
                           {pathUrl !== "/" ? (
                             <button
-                              onClick={() => { scrollToSection(menuItem?.path == null ? "" : menuItem.path); navbarToggleHandler() }}
+                              onClick={() => { router.push('/'); delay(500).then(() => scrollToSection(menuItem?.path == null ? "" : menuItem.path)); navbarToggleHandler() }}
                               className={`ud-menu-scroll flex py-2 text-base text-dark group-hover:text-primary dark:text-white dark:group-hover:text-primary lg:inline-flex lg:px-0 lg:py-6 ${pathUrl === menuItem?.path && "text-primary"
                                 }`}
                             >

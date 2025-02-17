@@ -1,16 +1,12 @@
-"use client";
-
-import { ThemeProvider } from "next-themes";
+import localFont from "next/font/local"
 import "../styles/index.css";
 import "../styles/prism-vsc-dark-plus.css";
-import ToasterContext from "./api/contex/ToasetContex";
-import { useEffect, useState } from "react";
-import localFont from 'next/font/local'
-import PreLoader from "@/components/common/PreLoader";
-import Header from "@/components/header";
-import Footer from "@/components/footer";
-import ScrollToTop from "@/components/scrollToTop";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: 'Time for Music',
+  description: 'Create your own music game in seconds!',
+}
 const myFont = localFont({
   src: '../fonts/GeckoLunch.ttf',
   display: 'swap',
@@ -20,39 +16,11 @@ const myFont = localFont({
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
-  const [loading, setLoading] = useState<boolean>(true);
-
-  useEffect(() => {
-    setTimeout(() => setLoading(false), 1000);
-  }, []);
-
   return (
     <html suppressHydrationWarning={true} className="!scroll-smooth" lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.js. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
-      <head />
-
-      <body className={`${myFont.variable}`}>
-        {loading ? (
-          <PreLoader />
-        ) : (
-          <ThemeProvider
-            attribute="class"
-            enableSystem={false}
-            defaultTheme="light"
-          >
-            <ToasterContext />
-            <Header />
-            {children}
-            <Footer />
-            <ScrollToTop />
-          </ThemeProvider>
-        )}
-      </body>
+      <body className={`${myFont.variable}`}>{children}</body>
     </html>
-  );
+  )
 }

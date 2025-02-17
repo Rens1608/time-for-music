@@ -4,15 +4,15 @@ const stripe = new Stripe(process.env.DEV_STRIPE_SECRET_KEY, {
     apiVersion: '2023-10-16',
 });
 
-export async function GET(req, res) {
+export async function GET(req, { params }) {
     if (req.method !== 'GET') {
-        return res.status(405).json({ error: 'Method Not Allowed' });
+        return Response.status(405).json({ error: 'Method Not Allowed' });
     }
 
-    const { session_id } = req.query;
+    const { session_id } = await params;
 
     if (!session_id || typeof session_id !== 'string') {
-        return res.status(400).json({ error: 'Invalid session_id' });
+        return Response.status(400).json({ error: 'Invalid session_id' });
     }
 
     try {
@@ -22,8 +22,8 @@ export async function GET(req, res) {
         const customerEmail = session.customer_details?.email || session.customer_email || 'Unknown Email';
         const fullName = session.customer_details?.name || 'Unknown Name';
 
-        return res.json({ orderNumber, productName, customerEmail, fullName });
+        return Response.json({ orderNumber, productName, customerEmail, fullName });
     } catch (error) {
-        return res.status(500).json({ error: error.message });
+        return Response.status(500).json({ error: error.message });
     }
 }

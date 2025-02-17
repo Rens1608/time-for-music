@@ -11,7 +11,8 @@ export const pricingData: Price[] = [
       "Access to our intuitive app",
       "Export a neatly formatted PDF for easy printing or sharing",
     ],
-    button_text: "Buy now"
+    button_text: "Buy now",
+    is_enabled: true,
   },
   {
     id: "price_1NQk5TLtGdPVhGLecVfQ7mn0",
@@ -22,6 +23,7 @@ export const pricingData: Price[] = [
       "Add personalized backgrounds to your generated cards for a unique touch",
       "Ideal for events, parties, or personalized gifts",
     ],
-    button_text: "Buy now"
+    button_text: "Buy now",
+    is_enabled: false,
   },
 ];

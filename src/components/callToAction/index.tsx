@@ -1,22 +1,31 @@
+'use client'
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGooglePlay } from "@fortawesome/free-brands-svg-icons"
 import Image from "next/image";
 import { faMusic } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 
 const CallToAction = () => {
+    const [showFront, setShowFront] = useState(true)
+
     return (
         <section className="relative dark:bg-dark flex items-center justify-center h-[40rem]">
             <div className="absolute flex flex-row items-center z-20 gap-20">
                 <div className="relative flex flex-col from-black justify-center h-[550px] w-[550px] rounded-xl px-8 py-10 shadow-[0px_0px_40px_0px_rgba(0,0,0,0.08)] sm:p-12 lg:px-6 lg:py-10 xl:p-14"
                     style={{ backgroundImage: "radial-gradient(rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.85) 100%),url('/bg.jpg')" }}>
                     <Image
-                        src="/card.png"
+                        src={showFront ? "/card_back.png" : "/card_front.png"}
                         alt="card"
-                        className="z-10 mx-auto max-w-full rounded-t-xl rounded-tr-xl"
+                        className="z-10 mx-auto max-w-full rounded-xl"
                         width={305}
                         height={716}
                     />
+                    <div className="absolute cursor-pointer w-21 bottom-5 right-5 h-8 bg-secondary flex items-center hover:bg-[#0BB489] p-2 rounded-lg"
+                        onClick={() => setShowFront(!showFront)}
+                    >
+                        <p className="text-white font-bold text-sm">Turn around</p>
+                    </div>
                 </div>
                 <div className="max-w-sm text-white">
                     <h2 className="text-3xl font-bold mb-3">Try it yourself !</h2>

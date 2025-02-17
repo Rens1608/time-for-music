@@ -4,4 +4,5 @@ export type Price = {
   nickname: string;
   offers: string[];
   button_text: string;
+  is_enabled: boolean;
 };

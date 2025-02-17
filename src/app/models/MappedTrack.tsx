@@ -4,4 +4,5 @@ export type MappedTrack = {
     year: string;
     url: string;
     isFront: boolean;
+    hasWaterMark: boolean;
 };

@@ -22,12 +22,12 @@ const CardGrid = ({ cards }: { cards: MappedTrack[] }) => {
                 {
                     gridItems.length > 0 ?
                         gridItems.map((item, i) => (
-                            <div key={i} className="aspect-square rounded-xl overflow-hidden" >
-                                <Card title={item.title} artist={item.artist} year={item.year} url={item.url} isFront={isFront} />
+                            <div key={i} className="aspect-square h-64 rounded-xl overflow-hidden" >
+                                <Card title={item.title} artist={item.artist} year={item.year} url={item.url} isFront={isFront} hasWaterMark={true} />
                             </div>
                         ))
                         : Array.from({ length: 20 }).map((item, i) => (
-                            <div key={i} className="aspect-square rounded-xl bg-gray-300 overflow-hidden" >
+                            <div key={i} className="aspect-square rounded-xl h-64 bg-gray-300 overflow-hidden" >
                                 <div className=" w-64 h-64 relative" />
                             </div>
                         ))

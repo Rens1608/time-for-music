@@ -49,16 +49,20 @@ export function useSpotifyPlaylist() {
                     Authorization: `Bearer ${accessToken}`,
                 },
             });
+            console.log(response);
+
             let tracks = response.data.tracks.items;
-            let moreTracks = tracks.length == 100
-            while (moreTracks) {
-                const nextResponse = await axios.get<ExtraTracksResponse>(response.data.tracks.next, {
+            let url: string | null = response.data.tracks.next
+
+            while (url) {
+                const nextResponse: ExtraTracksResponse = (await axios.get(url!, {
                     headers: {
                         Authorization: `Bearer ${accessToken}`,
                     },
-                });
-                tracks = tracks.concat(nextResponse.data.items)
-                moreTracks = nextResponse.data.items.length == 100
+                })).data;
+
+                tracks = tracks.concat(nextResponse.items)
+                url = nextResponse.next || null;
             }
 
             return {
@@ -69,11 +73,10 @@ export function useSpotifyPlaylist() {
                     year: item.track.album.release_date.split('-')[0],
                     url: item.track.href,
                     isFront: true,
+                    hasWaterMark: false
                 }))
             }
         } catch (err) {
-            console.error('Error fetching playlist:', err);
-            setError('Failed to fetch playlist');
             throw err;
         } finally {
             setLoading(false);

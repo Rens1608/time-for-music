@@ -4,23 +4,6 @@ import { Price } from "@/types/price";
 import Link from 'next/link';
 
 const PricingBox = ({ product }: { product: Price }) => {
-  // // POST request
-  // const handleSubscription = async (e: any) => {
-  //   e.preventDefault();
-  //   const { data } = await axios.post(
-  //     "/api/payment",
-  //     {
-  //       priceId: product.id,
-  //     },
-  //     {
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //     },
-  //   );
-  //   window.location.assign(data);
-  // };
-
   return (
     <div className="w-full px-4 md:w-1/2 lg:w-1/3">
       <div
@@ -53,10 +36,14 @@ const PricingBox = ({ product }: { product: Price }) => {
         </div>
         <div className="w-full">
           <Link
-            href="/createPlaylist"
-            className="inline-block rounded-md bg-primary px-7 py-3 text-center text-base font-medium text-white transition duration-300 hover:bg-primary/90"
+            href="/create-playlist"
+            className={`inline-block rounded-md bg-primary px-7 py-3 text-center text-base font-medium text-white transition duration-300
+              ${product.is_enabled ? 'hover:bg-primary/90'
+                : 'pointer-events-none cursor-not-allowed opacity-50'
+              }
+              `}
           >
-            {product.button_text}
+            {product.is_enabled ? product.button_text : "Coming soon"}
           </Link>
         </div>
       </div>
