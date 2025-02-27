@@ -10,8 +10,8 @@ function getTransporter() {
             port: Number(process.env.SMTP_PORT_SSL),
             secure: true,
             auth: {
-                user: process.env.SMTP_USER, // e.g., "your-email@gmail.com"
-                pass: process.env.SMTP_PASS, // app password or actual Gmail password
+                user: process.env.SMTP_USER,
+                pass: process.env.SMTP_PASS,
             },
         });
     }

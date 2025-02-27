@@ -32,8 +32,6 @@ export default function CreatePlayListPage() {
 
             if (id) {
                 getPlaylist(id).then((playlist: Playlist) => {
-                    console.log(playlist);
-
                     setCards(playlist.tracks)
                     setPlaylistName(playlist.name)
                     setAreCardsCreated(true)
@@ -55,7 +53,7 @@ export default function CreatePlayListPage() {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ playlistId, "playlistData": playlist }),
+            body: JSON.stringify({ playlistId, "playlistData": playlist, isDoubleSided }),
         });
 
         const result = await res.json();
@@ -85,6 +83,13 @@ export default function CreatePlayListPage() {
                     <div className="mt-4 mb-6 flex flex-col items-center">
                         <h1 className="text-center my-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.2]">{playlistName}</h1>
                         <p className="text-center mb-4 text-body-color dark:text-dark-6">This playlist contains {cards.length} songs. Please check if everything is in order. If so you can continue to finish your order!</p>
+                        {cards.length == 200 &&
+                            <div className="flex justify-center w-full">
+                                <div className="mt-5 mb-8 w-[528px] bg-red-600  rounded-xl overflow-hidden flex flex-col p-3">
+                                    <p className="text-center font-bold">You’ve reached the current limit of 200 cards per order. We’re working on an option to generate more, stay tuned!</p>
+                                </div>
+                            </div>
+                        }
                         <div className="flex flex-row gap-10">
                             <SelectableContainer title="Foldable" description="One sided version, requires more paper but better aligned for regular printers." imageSrc="foldable.svg" onClick={() => setIsDoublesided(false)} isSelected={!isDoubleSided} />
                             <SelectableContainer title="Double sided" description="Double sided version, requires less paper but can result in minor alignment issues." imageSrc="double_sided.svg" onClick={() => setIsDoublesided(true)} isSelected={isDoubleSided} />

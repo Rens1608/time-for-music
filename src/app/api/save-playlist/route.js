@@ -3,7 +3,7 @@ import { db, admin } from '../../../lib/firebaseAdmin';
 export async function POST(req) {
   try {
     // Parse the JSON body from the request
-    const { playlistId, playlistData } = await req.json();
+    const { playlistId, playlistData, isDoubleSided } = await req.json();
 
     if (!playlistId || !playlistData) {
       return new Response(
@@ -13,9 +13,10 @@ export async function POST(req) {
     }
 
     await db.collection('playlists').doc(playlistId).set({
-      playlist: playlistData,
+      playlist: JSON.parse(playlistData),
       createdAt: admin.firestore.FieldValue.serverTimestamp(),
-      isDelivered: false
+      isDelivered: false,
+      isDoubleSided: isDoubleSided,
     });
     return new Response(JSON.stringify({ success: true }), { status: 200 });
   } catch (error) {

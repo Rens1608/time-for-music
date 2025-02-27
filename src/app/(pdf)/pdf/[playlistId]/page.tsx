@@ -15,11 +15,10 @@ export default async function PdfPage({
     }
     const data = await res.json();
     const playlistData = data.playlistData;
-    console.log(playlistData);
 
     return (
         <main style={{ fontFamily: 'sans-serif', padding: 0 }}>
-            <CardList cards={playlistData.playlist} />
+            <CardList cards={playlistData.playlist} isDoubleSided={false} />
         </main>
     );
 }

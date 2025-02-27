@@ -12,7 +12,8 @@ export async function POST(req) {
     const productName = playlistName;
 
     const session = await stripe.checkout.sessions.create({
-      payment_method_types: ['card'],
+      payment_method_types: ['card', 'ideal', 'paypal'],
+
       line_items: [
         {
           price_data: {
@@ -27,6 +28,7 @@ export async function POST(req) {
       success_url: process.env.NEXT_PUBLIC_BASE_URL + '/order-success?session_id={CHECKOUT_SESSION_ID}',
       cancel_url: process.env.NEXT_PUBLIC_BASE_URL + '/create-playlist',
       metadata: {
+        name: "Time for Music",
         order_number: playlistId,
         product_name: productName,
       },
@@ -36,6 +38,8 @@ export async function POST(req) {
     return NextResponse.json({ url: session.url });
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (error) {
+    console.log(error);
+
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }

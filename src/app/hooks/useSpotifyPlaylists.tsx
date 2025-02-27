@@ -49,12 +49,11 @@ export function useSpotifyPlaylist() {
                     Authorization: `Bearer ${accessToken}`,
                 },
             });
-            console.log(response);
 
             let tracks = response.data.tracks.items;
             let url: string | null = response.data.tracks.next
 
-            while (url) {
+            while (url && tracks.length < 200) {
                 const nextResponse: ExtraTracksResponse = (await axios.get(url!, {
                     headers: {
                         Authorization: `Bearer ${accessToken}`,
