@@ -3,7 +3,7 @@ import CardList from '@/components/cards/cardList';
 export default async function PdfPage({
     params,
 }: {
-    params: { playlistId: string };
+    params: Promise<{ playlistId: string }>;
 }) {
     const { playlistId } = await params;
 
