@@ -18,7 +18,7 @@ export default async function PdfPage({
 
     return (
         <main style={{ fontFamily: 'sans-serif', padding: 0 }}>
-            <CardList cards={playlistData.playlist} isDoubleSided={false} />
+            <CardList cards={playlistData.playlist} isDoubleSided={playlistData.isDoubleSided} />
         </main>
     );
 }
