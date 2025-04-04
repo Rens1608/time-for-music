@@ -5,8 +5,6 @@ import { ExtraTracksResponse } from '../models/ExtraTracksResponse';
 import { Playlist } from '../models/Playlist';
 
 const SPOTIFY_API_BASE_URL = 'https://api.spotify.com/v1';
-const CLIENT_ID = '13dc194028b64a3b80a84a4e3f3d562e';
-const CLIENT_SECRET = '66881d54bf284a3390cdaf5ce12513ed';
 
 export function useSpotifyPlaylist() {
     const [loading, setLoading] = useState<boolean>(false);
@@ -26,8 +24,8 @@ export function useSpotifyPlaylist() {
                         'Content-Type': 'application/x-www-form-urlencoded',
                     },
                     auth: {
-                        username: CLIENT_ID,
-                        password: CLIENT_SECRET,
+                        username: (process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID as string),
+                        password: (process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_SECRET as string),
                     },
                 }
             );
