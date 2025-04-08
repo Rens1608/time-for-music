@@ -2,6 +2,7 @@ import localFont from "next/font/local"
 import "../styles/index.css";
 import "../styles/prism-vsc-dark-plus.css";
 import { Metadata } from "next";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata: Metadata = {
   title: 'Time for Music',
@@ -20,6 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html suppressHydrationWarning={true} className="!scroll-smooth" lang="en">
+      <SpeedInsights />
       <body className={`${myFont.variable}`}>{children}</body>
     </html>
   )
