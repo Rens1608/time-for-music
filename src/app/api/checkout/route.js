@@ -12,7 +12,7 @@ export async function POST(req) {
     const productName = playlistName;
 
     const session = await stripe.checkout.sessions.create({
-      payment_method_types: ['card', 'ideal', 'paypal'],
+      payment_method_types: ['card', 'ideal'],
 
       line_items: [
         {
