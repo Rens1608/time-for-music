@@ -7,7 +7,7 @@ export const pricingData: Price[] = [
     nickname: "Basic",
     offers: [
       "Generate cards with song titles, artists, release years, and scannable QR codes",
-      "Maximum of 500 cards",
+      "Maximum of 200 cards",
       "Access to our intuitive app",
       "Export a neatly formatted PDF for easy printing or sharing",
     ],
