@@ -7,7 +7,7 @@ const Hero = () => {
       <section
         id="hero"
         style={{
-          backgroundImage: "linear-gradient(to bottom, rgba(55, 88, 249, 0.6), rgb(55, 88, 249)), url('https://i1.pickpik.com/photos/456/973/70/crowd-concert-smoke-people-preview.jpg')",
+          backgroundImage: "linear-gradient(to bottom, rgba(55, 88, 249, 0.6), rgb(55, 88, 249)), url('/crowd-concert-smoke-people-preview.jpg')",
           backgroundSize: "cover",
         }}
         className="relative overflow-hidden bg-primary h-screen flex items-center"
