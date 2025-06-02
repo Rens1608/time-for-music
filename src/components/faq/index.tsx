@@ -1,13 +1,17 @@
 import SectionTitle from "../common/SectionTitle";
 import SingleFaq from "./SingleFaq";
+import { useTranslations } from 'next-intl';
 
 const Faq = () => {
+  const t = useTranslations('faq');
+  const tQuestions = useTranslations('faq.questions');
+
   return (
     <section id="faq" className="relative z-20 overflow-hidden bg-white pb-8 pt-20 dark:bg-dark lg:pb-[50px] lg:pt-[120px]">
       <div className="container">
         <SectionTitle
-          subtitle="FAQ"
-          title="All Your Questions Answered"
+          subtitle={t('subtitle')}
+          title={t('title')}
           paragraph=""
           width="640px"
           center
@@ -16,33 +20,31 @@ const Faq = () => {
         <div className="-mx-4 mt-[60px] flex flex-wrap lg:mt-20">
           <div className="w-full px-4 lg:w-1/2">
             <SingleFaq
-              question="How to use Time for Music?"
-              answer="Time for Music generates QR music game cards based on your Spotify playlists. Simply share the URL of your playlist with us, and we'll create a set of cards that link to your music. After you have made your selection we will present a downloadable PDF file!"
+              question={tQuestions('how-to-use.question')}
+              answer={tQuestions('how-to-use.answer')}
             />
             <SingleFaq
-              question="What can I do with the cards?"
-              answer="The cards are perfect for game nights, parties, or just for fun! You can use them to play a music quiz with your friends, challenge your family to guess the song, or simply enjoy your favorite music in a new way. The cards are also a great gift for music lovers!
-
-The first time around you will be asked to install our app on your phone. After this is done you can use the app to scan the cards. The song will start playing automatically after the card has been scanned and you and your friends can start guessing the song and artist!"
+              question={tQuestions('what-to-do.question')}
+              answer={tQuestions('what-to-do.answer')}
             />
             <SingleFaq
-              question="Is my phone suitable?"
-              answer="Currently we only support Android devices, so as long as you have an Android phone that can scan a QR code, you can scan the cards."
+              question={tQuestions('phone-compatibility.question')}
+              answer={tQuestions('phone-compatibility.answer')}
             />
           </div>
 
           <div className="w-full px-4 lg:w-1/2">
             <SingleFaq
-              question="Do I need Spotify Premium?"
-              answer="Yes. To automatically play the cards after scanning the QR code, you need a Spotify Premium account. If you don't have a Premium account, the link will open, but you will need to manually play the music."
+              question={tQuestions('spotify-premium.question')}
+              answer={tQuestions('spotify-premium.answer')}
             />
             <SingleFaq
-              question="What are the dimension of the cards?"
-              answer="The cards are 60 x 60 mm (2.36 x 2.36 inches)."
+              question={tQuestions('card-dimensions.question')}
+              answer={tQuestions('card-dimensions.answer')}
             />
             <SingleFaq
-              question="I have found a mistake on a playing card"
-              answer="We do our best to provide you with the most accurate information, but mistakes can happen. If you find an error in the data on your cards, please let us know. If it is indeed a mistake we will correct it and send you the digital, corrected version of your playlist for free!"
+              question={tQuestions('mistakes.question')}
+              answer={tQuestions('mistakes.answer')}
             />
           </div>
         </div>

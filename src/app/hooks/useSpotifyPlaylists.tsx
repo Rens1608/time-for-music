@@ -61,12 +61,13 @@ export function useSpotifyPlaylist() {
                 tracks = tracks.concat(nextResponse.items)
                 url = nextResponse.next || null;
             }
+            console.log(tracks);
 
             return {
                 name: response.data.name,
                 tracks: tracks.map((item) => ({
                     title: item.track.name,
-                    artist: item.track.artists[0]?.name || 'Unknown Artist',
+                    artist: item.track.artists?.map(artist => artist.name).join(" & ") ?? 'Unknown Artist',
                     year: item.track.album.release_date.split('-')[0],
                     url: item.track.href,
                     isFront: true,

@@ -74,7 +74,7 @@ const CardFront: React.FC<CardDataFront> = ({ url, hasWaterMark, image }) => {
 const CardBack: React.FC<CardDataBack> = ({ title, artist, year, color }) => {
     return (
         <div style={{ backgroundColor: color, WebkitPrintColorAdjust: "exact" }} className="w-full h-full p-1 flex flex-col justify-around items-center">
-            <div className="font-bold">{artist}</div>
+            <div className="font-bold text-center">{artist}</div>
             <div className="font-bold text-6xl">{year}</div>
             <div className="italic text-center">{title}</div>
             <style>

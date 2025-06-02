@@ -5,9 +5,11 @@ import { faGooglePlay } from "@fortawesome/free-brands-svg-icons"
 import Image from "next/image";
 import { faMusic } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 const CallToAction = () => {
     const [showFront, setShowFront] = useState(true)
+    const t = useTranslations('call-to-action')
 
     return (
         <section className="relative dark:bg-dark flex items-center justify-center h-[40rem]">
@@ -24,17 +26,17 @@ const CallToAction = () => {
                     <div className="absolute cursor-pointer w-21 bottom-5 right-5 h-8 bg-secondary flex items-center hover:bg-[#0BB489] p-2 rounded-lg"
                         onClick={() => setShowFront(!showFront)}
                     >
-                        <p className="text-white font-bold text-sm">Turn around</p>
+                        <p className="text-white font-bold text-sm">{t("turn-around")}</p>
                     </div>
                 </div>
                 <div className="max-w-sm text-white">
-                    <h2 className="text-3xl font-bold mb-3">Try it yourself !</h2>
-                    <p className="mb-2">Scan the example QR code with our companion app!</p>
-                    <p>In the image you see an example of one of our music cards. <br />You can scan and play it with our free companion app by following the steps below:</p>
+                    <h2 className="text-3xl font-bold mb-3">{t("title")}</h2>
+                    <p className="mb-2">{t("scan-app")}</p>
+                    <p>{t("companion-description")}</p>
                     <div className="flex flex-col">
                         <div className="flex flex-row gap-2 items-end mt-3 mb-3">
                             <p className="text-xl font-bold text-green-500 w-5">1.</p>
-                            <p className="font-bold">Download our free companion app</p>
+                            <p className="font-bold">{t("download-app")}</p>
                         </div>
                         <Link
                             href="https://nextjstemplates.com/templates/play"
@@ -46,11 +48,11 @@ const CallToAction = () => {
                     </div>
                     <div className="flex flex-row gap-2 items-start mt-3">
                         <p className="text-xl font-bold text-green-500 w-5">2.</p>
-                        <p className="font-bold">Open the companion app, click the camera icon and point it at the QR card.</p>
+                        <p className="font-bold">{t("scan-instructions")}</p>
                     </div>
                     <div className="flex flex-row gap-2 items-end mt-3">
                         <p className="text-xl font-bold text-green-500 w-5">3.</p>
-                        <p className="font-bold">Guess the song!</p>
+                        <p className="font-bold">{t("guess-song")}</p>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
-const colors = require('tailwindcss/colors')
+import colors from 'tailwindcss/colors';
+import tailgrids from 'tailgrids/plugin';
 
 const config: Config = {
 	darkMode: "class",
@@ -13,6 +14,9 @@ const config: Config = {
 			colors: {
 				...colors
 			},
+			fontFamily: {
+				sans: ['Roboto', 'sans-serif']
+			}
 		},
 	},
 	variants: {
@@ -22,6 +26,6 @@ const config: Config = {
 			borderColor: ['print'],
 		},
 	},
-	plugins: [require("tailgrids/plugin")],
+	plugins: [tailgrids],
 };
 export default config;

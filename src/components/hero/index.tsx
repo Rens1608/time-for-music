@@ -1,7 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from 'next-intl';
 
 const Hero = () => {
+
+  const t = useTranslations('hero')
+
   return (
     <>
       <section
@@ -20,10 +24,10 @@ const Hero = () => {
                 data-wow-delay=".2s"
               >
                 <h1 className="mb-8 sm:text-center md:text-center lg:text-left text-4xl font-bold leading-snug text-white sm:text-4xl sm:leading-snug lg:text-7xl lg:leading-[1.2]">
-                  The Ultimate Personalized Music Game
+                  {t("title")}
                 </h1>
                 <p className="mb-12 sm:text-center md:text-center lg:text-left max-w-[600px] text-base font-medium text-white sm:text-lg">
-                  Create your own music game in seconds with our easy-to-use online tool. Design custom cards with QR codes linked to your favorite tracks, and let the companion app bring the game to life by playing the music instantly. Perfect for any occasion!
+                  {t("description")}
                 </p>
                 <ul className="mb-10">
                   <li>
@@ -31,7 +35,7 @@ const Hero = () => {
                       href="/create-playlist"
                       className="inline-flex font-bold items-center justify-center rounded-md bg-secondary px-7 py-[12px] text-center text-base text-white shadow-1 transition duration-300 ease-in-out hover:bg-[#0BB489]"
                     >
-                      <h2>Start now !</h2>
+                      <h2>{t('action-button')}</h2>
                     </Link>
                   </li>
                 </ul>

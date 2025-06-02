@@ -2,8 +2,11 @@
 import SectionTitle from "../common/SectionTitle";
 import PricingBox from "./PricingBox";
 import { pricingData } from "@/stripe/pricingData";
+import { useTranslations } from 'next-intl';
 
 const Pricing = () => {
+  const t = useTranslations('pricing');
+
   return (
     <section
       id="pricing"
@@ -12,16 +15,21 @@ const Pricing = () => {
       <div className="container">
         <div className="mb-[60px]">
           <SectionTitle
-            subtitle="Pricing"
-            title="Affordable and Flexible Pricing for Everyone"
-            paragraph="At Time for Music, we believe in bringing fun and creativity to your music experience without breaking the bank. Choose the plan that fits your needs and start creating unforgettable moments."
+            subtitle={t('subtitle')}
+            title={t('title')}
+            paragraph={t('description')}
             center
           />
         </div>
 
         <div className="-mx-4 flex flex-wrap justify-center">
           {pricingData.map((product, i) => (
-            <PricingBox key={i} product={product} />
+            <PricingBox key={i} product={{
+              ...product,
+              nickname: t(`packages.${product.nickname.toLowerCase()}.name`),
+              offers: product.offers.map((_, index) => t(`packages.${product.nickname.toLowerCase()}.features.${index}`)),
+              button_text: t(`packages.${product.nickname.toLowerCase()}.button`)
+            }} />
           ))}
         </div>
       </div>

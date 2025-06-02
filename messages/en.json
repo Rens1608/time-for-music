@@ -1,0 +1,176 @@
+{
+    "hero": {
+        "title": "The Ultimate Personalized Music Game",
+        "description": "Create your own music game in seconds with our easy-to-use online tool. Design custom cards with QR codes linked to your favorite tracks, and let the companion app bring the game to life by playing the music instantly. Perfect for any occasion!",
+        "action-button": "Start now!"
+    },
+    "metadata": {
+        "description": "Create your own music game in seconds!"
+    },
+    "header": {
+        "home": "Home",
+        "features": "Features",
+        "pricing": "Pricing",
+        "faq": "Faq",
+        "contact": "Contact"
+    },
+    "call-to-action": {
+        "turn-around": "Turn around",
+        "title": "Try it yourself!",
+        "scan-app": "Scan the example QR code with our companion app!",
+        "companion-description": "In the image you see an example of one of our music cards. \n You can scan and play it with our free companion app by following the steps below:",
+        "download-app": "Download our free companion app",
+        "scan-instructions": "Open the companion app, click the camera icon and point it at the QR card.",
+        "guess-song": "Guess the song!"
+    },
+    "faq": {
+        "title": "All Your Questions Answered",
+        "subtitle": "FAQ",
+        "questions": {
+            "how-to-use": {
+                "question": "How to use Time for Music?",
+                "answer": "Time for Music generates QR music game cards based on your Spotify playlists. Simply share the URL of your playlist with us, and we'll create a set of cards that link to your music. After you have made your selection we will present a downloadable PDF file!"
+            },
+            "what-to-do": {
+                "question": "What can I do with the cards?",
+                "answer": "The cards are perfect for game nights, parties, or just for fun! You can use them to play a music quiz with your friends, challenge your family to guess the song, or simply enjoy your favorite music in a new way. The cards are also a great gift for music lovers!\n\nThe first time around you will be asked to install our app on your phone. After this is done you can use the app to scan the cards. The song will start playing automatically after the card has been scanned and you and your friends can start guessing the song and artist!"
+            },
+            "phone-compatibility": {
+                "question": "Is my phone suitable?",
+                "answer": "Currently we only support Android devices, so as long as you have an Android phone that can scan a QR code, you can scan the cards."
+            },
+            "spotify-premium": {
+                "question": "Do I need Spotify Premium?",
+                "answer": "Yes. To automatically play the cards after scanning the QR code, you need a Spotify Premium account. If you don't have a Premium account, the link will open, but you will need to manually play the music."
+            },
+            "card-dimensions": {
+                "question": "What are the dimension of the cards?",
+                "answer": "The cards are 60 x 60 mm (2.36 x 2.36 inches)."
+            },
+            "mistakes": {
+                "question": "I have found a mistake on a playing card",
+                "answer": "We do our best to provide you with the most accurate information, but mistakes can happen. If you find an error in the data on your cards, please let us know. If it is indeed a mistake we will correct it and send you the digital, corrected version of your playlist for free!"
+            }
+        }
+    },
+    "features": {
+        "title": "Feature Highlights",
+        "subtitle": "Features",
+        "items": {
+            "fun-for-all": {
+                "title": "Fun for All",
+                "description": "Perfect for game nights, team-building events, or music-loving friends and family."
+            },
+            "custom-cards": {
+                "title": "Custom Cards",
+                "description": "Create personalized music cards featuring song titles, artists, release years, and a scannable code."
+            },
+            "companion-app": {
+                "title": "Intuitive Companion App",
+                "description": "Enjoy a sleek and user-friendly app that makes scanning QR codes and playing songs a breeze."
+            },
+            "pdf-generator": {
+                "title": "Handy PDF Generator",
+                "description": "Easily create a well-organized PDF with custom music cards, perfect for printing or sharing."
+            }
+        }
+    },
+    "pricing": {
+        "title": "Affordable and Flexible Pricing for Everyone",
+        "subtitle": "Pricing",
+        "description": "At Time for Music, we believe in bringing fun and creativity to your music experience without breaking the bank. Choose the plan that fits your needs and start creating unforgettable moments.",
+        "packages": {
+            "basic": {
+                "name": "Basic",
+                "features": [
+                    "Generate cards with song titles, artists, release years, and scannable QR codes",
+                    "Maximum of 200 cards",
+                    "Access to our intuitive app",
+                    "Export a neatly formatted PDF for easy printing or sharing"
+                ],
+                "button": "Buy now"
+            },
+            "custom": {
+                "name": "Custom",
+                "features": [
+                    "Everything in the Basic Package",
+                    "Add personalized backgrounds to your generated cards for a unique touch",
+                    "Ideal for events, parties, or personalized gifts"
+                ],
+                "button": "Buy now"
+            }
+        }
+    },
+    "create-playlist": {
+        "title": "Share your playlist",
+        "description": "Let's start with entering the URL of your playlist in the searchbar below. Open Spotify, find your playlist, click on the three ellipses and then click the 'Share' button. Then, copy the URL and paste it in the field below.",
+        "url-placeholder": "Fill in your Spotify URL here",
+        "create-button": "Create cards !",
+        "error-message": "Failed fetching your Spotify playlist. Please ensure that your playlist is set to public mode.",
+        "playlist-info": "This playlist contains {count} songs. Please check if everything is in order. If so you can continue to finish your order!",
+        "limit-warning": "You've reached the current limit of 200 cards per order. We're working on an option to generate more, stay tuned!",
+        "foldable": {
+            "title": "Foldable",
+            "description": "One sided version, requires more paper but better aligned for regular printers."
+        },
+        "double-sided": {
+            "title": "Double sided",
+            "description": "Double sided version, requires less paper but can result in minor alignment issues."
+        },
+        "refund-checkbox": "I understand that after the review period expires returns and refunds are not possible as this is a tailor-made product",
+        "terms-checkbox": "I agree to the terms of service",
+        "continue-button": "Continue to Payment"
+    },
+    "terms-of-service": {
+        "title": "Terms of Service",
+        "sections": {
+            "introduction": {
+                "title": "1. Introduction",
+                "content": "Welcome to Time for Music! By using our app, you agree to comply with and be bound by the following terms and conditions. Please review them carefully."
+            },
+            "description": {
+                "title": "2. Description of Service",
+                "content": "Time for Music is an app that generates physical QR cards based on your Spotify playlists. By using our service, you acknowledge and agree to the following terms."
+            },
+            "contact": {
+                "title": "14. Contact Information",
+                "content": "If you have any questions about these terms and conditions, please contact us."
+            }
+        }
+    },
+    "privacy-policy": {
+        "title": "Privacy Policy of Time for Music!",
+        "introduction": {
+            "title": "Introduction",
+            "content": "Welcome to Time for Music! We are committed to protecting your privacy. This policy details the information we collect, how it is used and shared, and your rights regarding your data."
+        },
+        "information": {
+            "title": "Information We Collect",
+            "content": "Personal Information: We collect your email when you are placing an order. This enables us to send the generated playlist to the right email address and keep track of the purchase history."
+        },
+        "sharing": {
+            "title": "Sharing Your Information",
+            "content": "Data Hosting and Storage: We use Firebase to host the data collected. Your personal data is stored securely on Firebase, and we do not share it with any third-party services other than for the purpose of data hosting."
+        },
+        "security": {
+            "title": "Data Security",
+            "content": "We take the security of your data seriously. Your personal information is stored securely on Firebase, protected with industry-standard encryption protocols both in transit and at rest. We implement stringent security measures to prevent unauthorized access, alteration, and misuse of your data."
+        },
+        "rights": {
+            "title": "Your Rights",
+            "items": [
+                "Access, Correction, and Deletion: You have the right to access, correct, or request the deletion of your personal data at any time. If you wish to request deletion, please contact us through the contact form.",
+                "Data Portability: You have the right to request a copy of the data we hold about you in a structured, commonly used, and machine-readable format.",
+                "Right to Object: You have the right to object to this processing if you feel it impacts your personal rights and freedoms. You can exercise this right by contacting us through the contact form."
+            ]
+        },
+        "transfers": {
+            "title": "International Data Transfers",
+            "content": "Data we collect may be processed and stored in any country where our servers or service providers are located. We ensure that data transferred to and from Firebase adheres to stringent data protection standards to maintain the security and confidentiality of your information."
+        }
+    },
+    "not-found": {
+        "title": "404 Page",
+        "breadcrumb": "404 Page"
+    }
+}

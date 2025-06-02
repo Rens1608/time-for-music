@@ -6,8 +6,11 @@ import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import menuData from "./menuData";
 import { Menu } from "@/types/menu";
+import { LocaleSwitcher } from "../locale/LocaleSwitcher";
+import { useTranslations } from "next-intl";
 
 const Header = () => {
+  const t = useTranslations('header')
   const pathUrl = usePathname();
   const router = useRouter()
   // Navbar toggle
@@ -139,6 +142,7 @@ const Header = () => {
                       }`}
                   />
                 </button>
+                <LocaleSwitcher />
                 <nav
                   id="navbarCollapse"
                   className={`navbar absolute right-0 z-30 w-[250px] rounded border-[.5px] border-body-color/50 bg-white px-6 py-4 duration-300 dark:border-body-color/20 dark:bg-dark-2 lg:visible lg:static lg:w-auto lg:border-none lg:!bg-transparent lg:p-0 lg:opacity-100 lg:dark:bg-transparent ${navbarOpen
@@ -156,7 +160,7 @@ const Header = () => {
                               className={`ud-menu-scroll flex py-2 text-base text-dark group-hover:text-primary dark:text-white dark:group-hover:text-primary lg:inline-flex lg:px-0 lg:py-6 ${pathUrl === menuItem?.path && "text-primary"
                                 }`}
                             >
-                              {menuItem.title}
+                              {t(menuItem.title)}
                             </button>
                           ) : (
                             <button
@@ -169,7 +173,7 @@ const Header = () => {
                                 "!text-primary"
                                 }`}
                             >
-                              {menuItem.title}
+                              {t(menuItem.title)}
                             </button>
                           )}
                         </li>
@@ -180,7 +184,7 @@ const Header = () => {
                               onClick={() => handleSubmenu(index)}
                               className={`ud-menu-scroll flex items-center justify-between py-2 text-base text-dark group-hover:text-primary dark:text-white dark:group-hover:text-primary lg:inline-flex lg:px-0 lg:py-6`}
                             >
-                              {menuItem.title}
+                              {t(menuItem.title)}
 
                               <span className="pl-1">
                                 <svg
@@ -206,7 +210,7 @@ const Header = () => {
                                 : "text-white"
                                 }`}
                             >
-                              {menuItem.title}
+                              {t(menuItem.title)}
 
                               <span className="pl-1">
                                 <svg
@@ -239,7 +243,7 @@ const Header = () => {
                                   : "text-body-color hover:text-primary dark:text-dark-6 dark:hover:text-primary"
                                   }`}
                               >
-                                {submenuItem.title}
+                                {t(submenuItem.title)}
                               </div>
                             ))}
                           </div>

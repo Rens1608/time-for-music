@@ -1,0 +1,176 @@
+{
+    "hero": {
+        "title": "Het leukste gepersonaliseerde muziek spel",
+        "description": "Maak in enkele seconden je eigen muziekspel met onze gebruiksvriendelijke online tool. Ontwerp aangepaste kaarten met QR-codes die gekoppeld zijn aan je favoriete nummers en laat de companion-app het spel tot leven brengen door de muziek direct af te spelen. Perfect voor elke gelegenheid!",
+        "action-button": "Start nu!"
+    },
+    "metadata": {
+        "description": "Maak je eigen muziek spel in secondes!"
+    },
+    "header": {
+        "home": "Home",
+        "features": "Functionaliteiten",
+        "pricing": "Prijzen",
+        "faq": "Faq",
+        "contact": "Contact"
+    },
+    "call-to-action": {
+        "turn-around": "Draai om",
+        "title": "Probeer het zelf!",
+        "scan-app": "Scan de QR code met de companion app!",
+        "companion-description": "In de afbeelding zie je een voorbeeld van een gegenereerde muziek kaart. \n Het scannen en afspelen van een muziek kaart met de gratis companion app kan als volgt:",
+        "download-app": "Download de gratis companion app",
+        "scan-instructions": "Open de companion app, klik op het camera icoon en richt deze op de QR kaart.",
+        "guess-song": "Raad het nummer!"
+    },
+    "faq": {
+        "title": "Al je vragen beantwoord",
+        "subtitle": "FAQ",
+        "questions": {
+            "how-to-use": {
+                "question": "Hoe gebruik ik Time for Music?",
+                "answer": "Time for Music genereert QR muziekspelkaarten op basis van je Spotify-afspeellijsten. Deel simpelweg de URL van je afspeellijst met ons, en wij maken een set kaarten die naar je muziek verwijzen. Nadat je je selectie hebt gemaakt, presenteren we een downloadbaar PDF-bestand!"
+            },
+            "what-to-do": {
+                "question": "Wat kan ik doen met de kaarten?",
+                "answer": "De kaarten zijn perfect voor spelletjesavonden, feestjes of gewoon voor de lol! Je kunt ze gebruiken om een muziekquiz te spelen met je vrienden, je familie uitdagen om het nummer te raden, of gewoon op een nieuwe manier van je favoriete muziek genieten. De kaarten zijn ook een geweldig cadeau voor muziekliefhebbers!\n\nDe eerste keer wordt je gevraagd om onze app op je telefoon te installeren. Nadat dit is gedaan, kun je de app gebruiken om de kaarten te scannen. Het nummer begint automatisch te spelen nadat de kaart is gescand en jij en je vrienden kunnen beginnen met het raden van het nummer en de artiest!"
+            },
+            "phone-compatibility": {
+                "question": "Is mijn telefoon geschikt?",
+                "answer": "Momenteel ondersteunen we alleen Android-apparaten, dus zolang je een Android-telefoon hebt die een QR-code kan scannen, kun je de kaarten scannen."
+            },
+            "spotify-premium": {
+                "question": "Heb ik Spotify Premium nodig?",
+                "answer": "Ja. Om de kaarten automatisch af te spelen na het scannen van de QR-code, heb je een Spotify Premium-account nodig. Als je geen Premium-account hebt, zal de link wel openen, maar moet je de muziek handmatig afspelen."
+            },
+            "card-dimensions": {
+                "question": "Wat zijn de afmetingen van de kaarten?",
+                "answer": "De kaarten zijn 60 x 60 mm."
+            },
+            "mistakes": {
+                "question": "Ik heb een fout gevonden op een speelkaart",
+                "answer": "We doen ons best om je de meest nauwkeurige informatie te geven, maar fouten kunnen voorkomen. Als je een fout vindt in de gegevens op je kaarten, laat het ons dan weten. Als het inderdaad een fout is, zullen we deze corrigeren en je gratis de digitale, gecorrigeerde versie van je afspeellijst sturen!"
+            }
+        }
+    },
+    "features": {
+        "title": "Belangrijkste Functies",
+        "subtitle": "Functionaliteiten",
+        "items": {
+            "fun-for-all": {
+                "title": "Plezier voor Iedereen",
+                "description": "Perfect voor spelletjesavonden, teambuilding-evenementen of muziekliefhebbende vrienden en familie."
+            },
+            "custom-cards": {
+                "title": "Aangepaste Kaarten",
+                "description": "Maak gepersonaliseerde muziekkaarten met titels van nummers, artiesten, verschijningsjaren en een scanbare code."
+            },
+            "companion-app": {
+                "title": "Intuïtieve Companion App",
+                "description": "Geniet van een strakke en gebruiksvriendelijke app die het scannen van QR-codes en het afspelen van nummers eenvoudig maakt."
+            },
+            "pdf-generator": {
+                "title": "Handige PDF Generator",
+                "description": "Maak eenvoudig een overzichtelijke PDF met aangepaste muziekkaarten, perfect om af te drukken of te delen."
+            }
+        }
+    },
+    "pricing": {
+        "title": "Betaalbare en Flexibele Prijzen voor Iedereen",
+        "subtitle": "Prijzen",
+        "description": "Bij Time for Music geloven we in het brengen van plezier en creativiteit naar jouw muziekervaring zonder je bankrekening te plunderen. Kies het pakket dat bij je past en begin met het creëren van onvergetelijke momenten.",
+        "packages": {
+            "basic": {
+                "name": "Basis",
+                "features": [
+                    "Genereer kaarten met titels van nummers, artiesten, verschijningsjaren en scanbare QR-codes",
+                    "Maximaal 200 kaarten",
+                    "Toegang tot onze intuïtieve app",
+                    "Exporteer een netjes opgemaakt PDF-bestand om eenvoudig af te drukken of te delen"
+                ],
+                "button": "Koop nu"
+            },
+            "custom": {
+                "name": "Aangepast",
+                "features": [
+                    "Alles uit het Basis Pakket",
+                    "Voeg gepersonaliseerde achtergronden toe aan je gegenereerde kaarten voor een unieke touch",
+                    "Ideaal voor evenementen, feestjes of gepersonaliseerde cadeaus"
+                ],
+                "button": "Koop nu"
+            }
+        }
+    },
+    "create-playlist": {
+        "title": "Deel je afspeellijst",
+        "description": "Laten we beginnen met het invoeren van de URL van je afspeellijst in de zoekbalk hieronder. Open Spotify, zoek je afspeellijst, klik op de drie puntjes en klik vervolgens op de 'Delen' knop. Kopieer daarna de URL en plak deze in het veld hieronder.",
+        "url-placeholder": "Vul hier je Spotify URL in",
+        "create-button": "Maak kaarten!",
+        "error-message": "Het ophalen van je Spotify afspeellijst is mislukt. Zorg ervoor dat je afspeellijst op openbaar staat.",
+        "playlist-info": "Deze afspeellijst bevat {count} nummers. Controleer of alles in orde is. Als dat zo is, kun je doorgaan om je bestelling af te ronden!",
+        "limit-warning": "Je hebt de huidige limiet van 200 kaarten per bestelling bereikt. We werken aan een optie om meer te genereren, blijf op de hoogte!",
+        "foldable": {
+            "title": "Vouwbaar",
+            "description": "Enkelzijdige versie, vereist meer papier maar beter uitgelijnd voor normale printers."
+        },
+        "double-sided": {
+            "title": "Dubbelzijdig",
+            "description": "Dubbelzijdige versie, vereist minder papier maar kan leiden tot kleine uitlijningsproblemen."
+        },
+        "refund-checkbox": "Ik begrijp dat na het verstrijken van de beoordelingsperiode retourneren en terugbetaling niet mogelijk zijn omdat dit een op maat gemaakt product is",
+        "terms-checkbox": "Ik ga akkoord met de algemene voorwaarden",
+        "continue-button": "Doorgaan naar Betaling"
+    },
+    "terms-of-service": {
+        "title": "Algemene Voorwaarden",
+        "sections": {
+            "introduction": {
+                "title": "1. Introductie",
+                "content": "Welkom bij Time for Music! Door gebruik te maken van onze app ga je akkoord met en ben je gebonden aan de volgende voorwaarden. Lees ze zorgvuldig door."
+            },
+            "description": {
+                "title": "2. Beschrijving van de Dienst",
+                "content": "Time for Music is een app die fysieke QR-kaarten genereert op basis van je Spotify-afspeellijsten. Door gebruik te maken van onze dienst erken je en ga je akkoord met de volgende voorwaarden."
+            },
+            "contact": {
+                "title": "14. Contactgegevens",
+                "content": "Als je vragen hebt over deze algemene voorwaarden, neem dan contact met ons op."
+            }
+        }
+    },
+    "privacy-policy": {
+        "title": "Privacybeleid van Time for Music!",
+        "introduction": {
+            "title": "Introductie",
+            "content": "Welkom bij Time for Music! We zijn toegewijd aan het beschermen van je privacy. Dit beleid beschrijft de informatie die we verzamelen, hoe deze wordt gebruikt en gedeeld, en je rechten met betrekking tot je gegevens."
+        },
+        "information": {
+            "title": "Informatie die we Verzamelen",
+            "content": "Persoonlijke Informatie: We verzamelen je e-mail wanneer je een bestelling plaatst. Hiermee kunnen we de gegenereerde afspeellijst naar het juiste e-mailadres sturen en de aankoopgeschiedenis bijhouden."
+        },
+        "sharing": {
+            "title": "Het Delen van je Informatie",
+            "content": "Gegevenshosting en Opslag: We gebruiken Firebase om de verzamelde gegevens te hosten. Je persoonlijke gegevens worden veilig opgeslagen op Firebase, en we delen ze niet met externe diensten anders dan voor het hosten van gegevens."
+        },
+        "security": {
+            "title": "Gegevensbeveiliging",
+            "content": "We nemen de beveiliging van je gegevens serieus. Je persoonlijke informatie wordt veilig opgeslagen op Firebase, beschermd met industriestandaard encryptieprotocollen, zowel tijdens overdracht als in rust. We implementeren strenge beveiligingsmaatregelen om ongeautoriseerde toegang, wijziging en misbruik van je gegevens te voorkomen."
+        },
+        "rights": {
+            "title": "Je Rechten",
+            "items": [
+                "Toegang, Correctie en Verwijdering: Je hebt het recht om je persoonlijke gegevens op elk moment in te zien, te corrigeren of te laten verwijderen. Als je verwijdering wilt aanvragen, neem dan contact met ons op via het contactformulier.",
+                "Gegevensoverdraagbaarheid: Je hebt het recht om een kopie van de gegevens die we over je hebben op te vragen in een gestructureerd, veel gebruikt en machineleesbaar formaat.",
+                "Recht van Bezwaar: Je hebt het recht om bezwaar te maken tegen deze verwerking als je vindt dat deze impact heeft op je persoonlijke rechten en vrijheden. Je kunt dit recht uitoefenen door contact met ons op te nemen via het contactformulier."
+            ]
+        },
+        "transfers": {
+            "title": "Internationale Gegevensoverdracht",
+            "content": "Gegevens die we verzamelen kunnen worden verwerkt en opgeslagen in elk land waar onze servers of dienstverleners zich bevinden. We zorgen ervoor dat gegevens die van en naar Firebase worden overgedragen, voldoen aan strenge gegevensbeschermingsnormen om de veiligheid en vertrouwelijkheid van je informatie te waarborgen."
+        }
+    },
+    "not-found": {
+        "title": "404 Pagina",
+        "breadcrumb": "404 Pagina"
+    }
+}
